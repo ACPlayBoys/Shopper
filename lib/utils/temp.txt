@@ -1,0 +1,53 @@
+import java.util.*;
+public class Main{
+
+     public static void main(String []args){
+         Scanner sc=new Scanner(System.in);
+         int ar[]=new int[sc.nextInt()];
+         for(int i=0;i<ar.length;i++)
+         {
+             ar[i]=sc.nextInt();
+         }
+         int find=sc.nextInt();
+         int start=0,end=ar.length-1,mid=0;
+         int index=find(start,end,mid,find,ar);
+         int startIndex=index,endIndex=index;
+         if(index>-1)
+         {
+             while(true&&index!=0&&index!=ar.length-1)
+             {
+                 if(ar[startIndex]==ar[startIndex-1]){startIndex=startIndex-1;}
+                 else{break;}
+             }
+             while(true&&index!=0&&index!=ar.length-1)
+             {
+                 if(ar[endIndex]==ar[endIndex+1]){endIndex=endIndex+1;}
+                 else{break;}
+             }
+             
+         System.out.println(startIndex);
+         System.out.println(index);
+         System.out.println(endIndex);
+         }
+         else {System.out.println(index);System.out.println(index);}
+     }
+     public static int find(int start,int end,int mid,int find,int ar[])
+     {
+         while(start<=end)
+         {
+             mid=(start+end)/2;
+             if(find<ar[mid])
+             {
+                 end=mid-1;
+             }
+             else if(find>ar[mid])
+             {
+                 start=mid+1;
+             }
+             else {
+                return mid;
+                }
+             }
+             return mid*-1;
+     }
+}
