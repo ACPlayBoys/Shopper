@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: MTheme.darkTheme(context),
       routes: {
-        "/": (context) => SplashScreen(),
+        "/": (context) => HomePage(),
         myroutes.home: (context) => HomePage(),
       },
     );
