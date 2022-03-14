@@ -196,11 +196,13 @@ class _Login_ScreenState extends State<Login_Screen> {
     } else
       return Container(
         decoration: BoxDecoration(
+          color: Theme.of(context).primaryColor,
+          borderRadius: BorderRadius.circular(50),
           image: DecorationImage(
-            image: AssetImage('assests/images/7328930.png'),
-            fit: BoxFit.contain,
+            image: Image.asset(
+              'assests/images/giphy.gif',
+            ).image,
           ),
-          shape: BoxShape.circle,
         ),
       );
   }
